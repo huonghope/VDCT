@@ -1,0 +1,261 @@
+[10967][      debug] Loading models took 102ms
+[10967][environment] CWD = /home/hopekr/VDCT/quickly/cwe_checker_juliet_suite/testcases/CWE121_Stack_Based_Buffer_Overflow/s
+[10967][environment] No .inferconfig file found
+[10967][environment] Project root = /home/hopekr/VDCT/quickly/cwe_checker_juliet_suite/testcases/CWE121_Stack_Based_Buffer_Overflow/s
+[10967][environment] INFER_ARGS =   @/tmp/args.tmp.35cccc
+[10967][environment] command line arguments:   infer run -j 1 -- make
+[10967][environment] Available memory at startup: 1337 MB
+[10967][environment] Active checkers: self-in-block (C/C++/ObjC), starvation (C/C++/ObjC, Java), uninit (C/C++/ObjC), siof (C/C++/ObjC), dotnet-resource-leak (C#/.Net), racerd (C/C++/ObjC, Java), liveness (C/C++/ObjC), inefficient-keyset-iterator (Java), fragment-retains-view (Java), biabduction (C/C++/ObjC, Java, C#/.Net)
+[10967][environment] Scheduler: file
+[10967][environment] Cores used: 1
+[10967][environment] Infer version v1.1.0
+[10967][environment] Copyright 2009 - present Facebook. All Rights Reserved.
+[10967][environment] 
+[10967][   progress] Capturing in make/cc mode...
+[10967][environment] Running command make with env:
+[10967][environment] (Extend((PATH /opt/infer-linux64-v1.1.0/lib/infer/infer/bin/../lib/wrappers:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin)(INFER_OLD_PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin)))
+[10967][environment] 
+
+[10969][environment] CWD = /home/hopekr/VDCT/quickly/cwe_checker_juliet_suite/testcases/CWE121_Stack_Based_Buffer_Overflow/s
+[10969][environment] No .inferconfig file found
+[10969][environment] Project root = /home/hopekr/VDCT/quickly/cwe_checker_juliet_suite/testcases/CWE121_Stack_Based_Buffer_Overflow/s
+[10969][environment] INFER_ARGS =   @/tmp/args.tmp.aa2ce0
+[10969][environment] command line arguments:   gcc -c -I ../../../src/testcasesupport
+[10969][environment]                           main_linux.cpp -o main_linux.o
+[10969][environment] Available memory at startup: 1301 MB
+[10969][environment] Active checkers: self-in-block (C/C++/ObjC), starvation (C/C++/ObjC, Java), uninit (C/C++/ObjC), siof (C/C++/ObjC), dotnet-resource-leak (C#/.Net), racerd (C/C++/ObjC, Java), liveness (C/C++/ObjC), inefficient-keyset-iterator (Java), fragment-retains-view (Java), biabduction (C/C++/ObjC, Java, C#/.Net)
+[10969][      debug] 
+[10969][      debug] *** Beginning capture of file /home/hopekr/VDCT/quickly/cwe_checker_juliet_suite/testcases/CWE121_Stack_Based_Buffer_Overflow/s/main_linux.cpp ***
+[10969][      debug] Loading the following linters files: /opt/infer-linux64-v1.1.0/lib/infer/infer/bin/../lib/linter_rules/linters.al
+[10969][      debug] Elapsed: 148ms.
+[10969][      debug] GC stats for capture:
+[10969][      debug]   minor_words: 4.23762e+06
+[10969][      debug]   promoted_words: 507195
+[10969][      debug]   major_words: 531566
+[10969][      debug]   minor_collections: 5
+[10969][      debug]   major_collections: 1
+[10969][      debug]   compactions: 0
+[10969][      debug]   top_heap_words: 760832
+[10969][      debug]   
+[10969][      debug] GC stats for main_process_full:
+[10969][      debug]   minor_words: 5.62978e+06
+[10969][      debug]   promoted_words: 675067
+[10969][      debug]   major_words: 720090
+[10969][      debug]   minor_collections: 19
+[10969][      debug]   major_collections: 5
+[10969][      debug]   compactions: 1
+[10969][      debug]   top_heap_words: 760832
+[10969][      debug]   
+[10969][environment] Scheduler: file
+[10969][environment] Cores used: 1
+[10969][environment] 
+[10974][environment] CWD = /home/hopekr/VDCT/quickly/cwe_checker_juliet_suite/testcases/CWE121_Stack_Based_Buffer_Overflow/s
+[10974][environment] No .inferconfig file found
+[10974][environment] Project root = /home/hopekr/VDCT/quickly/cwe_checker_juliet_suite/testcases/CWE121_Stack_Based_Buffer_Overflow/s
+[10974][environment] INFER_ARGS =   @/tmp/args.tmp.fc5586
+[10974][environment] command line arguments:   gcc -c -I ../../../src/testcasesupport
+[10974][environment]                           CWE121_Stack_Based_Buffer_Overflow__char_type_overrun_memcpy_01.c
+[10974][environment]                           -o
+[10974][environment]                           CWE121_Stack_Based_Buffer_Overflow__char_type_overrun_memcpy_01.o
+[10974][environment] Available memory at startup: 1301 MB
+[10974][environment] Active checkers: self-in-block (C/C++/ObjC), starvation (C/C++/ObjC, Java), uninit (C/C++/ObjC), siof (C/C++/ObjC), dotnet-resource-leak (C#/.Net), racerd (C/C++/ObjC, Java), liveness (C/C++/ObjC), inefficient-keyset-iterator (Java), fragment-retains-view (Java), biabduction (C/C++/ObjC, Java, C#/.Net)
+[10974][      debug] 
+[10974][      debug] *** Beginning capture of file /home/hopekr/VDCT/quickly/cwe_checker_juliet_suite/testcases/CWE121_Stack_Based_Buffer_Overflow/s/CWE121_Stack_Based_Buffer_Overflow__char_type_overrun_memcpy_01.c ***
+[10974][      debug] Loading the following linters files: /opt/infer-linux64-v1.1.0/lib/infer/infer/bin/../lib/linter_rules/linters.al
+[10974][      debug] Elapsed: 174ms.
+[10974][      debug] GC stats for capture:
+[10974][      debug]   minor_words: 3.36587e+06
+[10974][      debug]   promoted_words: 402001
+[10974][      debug]   major_words: 420712
+[10974][      debug]   minor_collections: 4
+[10974][      debug]   major_collections: 0
+[10974][      debug]   compactions: 0
+[10974][      debug]   top_heap_words: 661504
+[10974][      debug]   
+[10974][      debug] GC stats for main_process_full:
+[10974][      debug]   minor_words: 4.75811e+06
+[10974][      debug]   promoted_words: 569900
+[10974][      debug]   major_words: 609263
+[10974][      debug]   minor_collections: 18
+[10974][      debug]   major_collections: 4
+[10974][      debug]   compactions: 1
+[10974][      debug]   top_heap_words: 661504
+[10974][      debug]   
+[10974][environment] Scheduler: file
+[10974][environment] Cores used: 1
+[10974][environment] 
+[10979][environment] CWD = /home/hopekr/VDCT/quickly/cwe_checker_juliet_suite/testcases/CWE121_Stack_Based_Buffer_Overflow/s
+[10979][environment] No .inferconfig file found
+[10979][environment] Project root = /home/hopekr/VDCT/quickly/cwe_checker_juliet_suite/testcases/CWE121_Stack_Based_Buffer_Overflow/s
+[10979][environment] INFER_ARGS =   @/tmp/args.tmp.754cd6
+[10979][environment] command line arguments:   gcc -c -I ../../../src/testcasesupport
+[10979][environment]                           ../../../src/testcasesupport/io.c -o io.o
+[10979][environment] Available memory at startup: 1310 MB
+[10979][environment] Active checkers: self-in-block (C/C++/ObjC), starvation (C/C++/ObjC, Java), uninit (C/C++/ObjC), siof (C/C++/ObjC), dotnet-resource-leak (C#/.Net), racerd (C/C++/ObjC, Java), liveness (C/C++/ObjC), inefficient-keyset-iterator (Java), fragment-retains-view (Java), biabduction (C/C++/ObjC, Java, C#/.Net)
+[10979][      debug] 
+[10979][      debug] *** Beginning capture of file /home/hopekr/VDCT/quickly/cwe_checker_juliet_suite/src/testcasesupport/io.c ***
+[10979][      debug] Loading the following linters files: /opt/infer-linux64-v1.1.0/lib/infer/infer/bin/../lib/linter_rules/linters.al
+[10979][      debug] Elapsed: 238ms.
+[10979][      debug] GC stats for capture:
+[10979][      debug]   minor_words: 4.42031e+06
+[10979][      debug]   promoted_words: 507373
+[10979][      debug]   major_words: 532450
+[10979][      debug]   minor_collections: 6
+[10979][      debug]   major_collections: 1
+[10979][      debug]   compactions: 0
+[10979][      debug]   top_heap_words: 760832
+[10979][      debug]   
+[10979][      debug] GC stats for main_process_full:
+[10979][      debug]   minor_words: 5.81248e+06
+[10979][      debug]   promoted_words: 675249
+[10979][      debug]   major_words: 720978
+[10979][      debug]   minor_collections: 20
+[10979][      debug]   major_collections: 5
+[10979][      debug]   compactions: 1
+[10979][      debug]   top_heap_words: 760832
+[10979][      debug]   
+[10979][environment] Scheduler: file
+[10979][environment] Cores used: 1
+[10979][environment] 
+[10984][environment] CWD = /home/hopekr/VDCT/quickly/cwe_checker_juliet_suite/testcases/CWE121_Stack_Based_Buffer_Overflow/s
+[10984][environment] No .inferconfig file found
+[10984][environment] Project root = /home/hopekr/VDCT/quickly/cwe_checker_juliet_suite/testcases/CWE121_Stack_Based_Buffer_Overflow/s
+[10984][environment] INFER_ARGS =   @/tmp/args.tmp.acef1b
+[10984][environment] command line arguments:   gcc -c -I ../../../src/testcasesupport
+[10984][environment]                           ../../../src/testcasesupport/std_thread.c -o
+[10984][environment]                           std_thread.o
+[10984][environment] Available memory at startup: 1311 MB
+[10984][environment] Active checkers: self-in-block (C/C++/ObjC), starvation (C/C++/ObjC, Java), uninit (C/C++/ObjC), siof (C/C++/ObjC), dotnet-resource-leak (C#/.Net), racerd (C/C++/ObjC, Java), liveness (C/C++/ObjC), inefficient-keyset-iterator (Java), fragment-retains-view (Java), biabduction (C/C++/ObjC, Java, C#/.Net)
+[10984][      debug] 
+[10984][      debug] *** Beginning capture of file /home/hopekr/VDCT/quickly/cwe_checker_juliet_suite/src/testcasesupport/std_thread.c ***
+[10984][      debug] Loading the following linters files: /opt/infer-linux64-v1.1.0/lib/infer/infer/bin/../lib/linter_rules/linters.al
+[10984][      debug] Elapsed: 154ms.
+[10984][      debug] GC stats for capture:
+[10984][      debug]   minor_words: 3.84865e+06
+[10984][      debug]   promoted_words: 448231
+[10984][      debug]   major_words: 471203
+[10984][      debug]   minor_collections: 5
+[10984][      debug]   major_collections: 0
+[10984][      debug]   compactions: 0
+[10984][      debug]   top_heap_words: 661504
+[10984][      debug]   
+[10984][      debug] GC stats for main_process_full:
+[10984][      debug]   minor_words: 5.24084e+06
+[10984][      debug]   promoted_words: 616111
+[10984][      debug]   major_words: 659735
+[10984][      debug]   minor_collections: 19
+[10984][      debug]   major_collections: 4
+[10984][      debug]   compactions: 1
+[10984][      debug]   top_heap_words: 661504
+[10984][      debug]   
+[10984][environment] Scheduler: file
+[10984][environment] Cores used: 1
+[10984][environment] 
+[10989][environment] CWD = /home/hopekr/VDCT/quickly/cwe_checker_juliet_suite/testcases/CWE121_Stack_Based_Buffer_Overflow/s
+[10989][environment] No .inferconfig file found
+[10989][environment] Project root = /home/hopekr/VDCT/quickly/cwe_checker_juliet_suite/testcases/CWE121_Stack_Based_Buffer_Overflow/s
+[10989][environment] INFER_ARGS =   @/tmp/args.tmp.dd9e9e
+[10989][environment] command line arguments:   g++ -pthread -lm main_linux.o
+[10989][environment]                           CWE121_Stack_Based_Buffer_Overflow__char_type_overrun_memcpy_01.o
+[10989][environment]                           io.o std_thread.o -o ./build/test
+[10989][environment] Available memory at startup: 1311 MB
+[10989][environment] Active checkers: self-in-block (C/C++/ObjC), starvation (C/C++/ObjC, Java), uninit (C/C++/ObjC), siof (C/C++/ObjC), dotnet-resource-leak (C#/.Net), racerd (C/C++/ObjC, Java), liveness (C/C++/ObjC), inefficient-keyset-iterator (Java), fragment-retains-view (Java), biabduction (C/C++/ObjC, Java, C#/.Net)
+[10989][      debug] GC stats for capture:
+[10989][      debug]   minor_words: 6880
+[10989][      debug]   promoted_words: 0
+[10989][      debug]   major_words: 0
+[10989][      debug]   minor_collections: 0
+[10989][      debug]   major_collections: 0
+[10989][      debug]   compactions: 0
+[10989][      debug]   top_heap_words: 188416
+[10989][      debug]   
+[10989][      debug] GC stats for main_process_full:
+[10989][      debug]   minor_words: 1.39938e+06
+[10989][      debug]   promoted_words: 167901
+[10989][      debug]   major_words: 188553
+[10989][      debug]   minor_collections: 14
+[10989][      debug]   major_collections: 4
+[10989][      debug]   compactions: 1
+[10989][      debug]   top_heap_words: 188416
+[10989][      debug]   
+[10989][environment] Scheduler: file
+[10989][environment] Cores used: 1
+[10989][environment] [10967][      debug] GC stats for capture:
+[10967][      debug]   minor_words: 1490
+[10967][      debug]   promoted_words: 0
+[10967][      debug]   major_words: 0
+[10967][      debug]   minor_collections: 0
+[10967][      debug]   major_collections: 0
+[10967][      debug]   compactions: 0
+[10967][      debug]   top_heap_words: 760832
+[10967][      debug]   
+[10967][   progress] Found 4 source files to analyze in /home/hopekr/VDCT/quickly/cwe_checker_juliet_suite/testcases/CWE121_Stack_Based_Buffer_Overflow/s/infer-out
+[10967][   progress] /home/hopekr/VDCT/quickly/cwe_checker_juliet_suite/src/testcasesupport/io.c starting
+[10967][   progress] /home/hopekr/VDCT/quickly/cwe_checker_juliet_suite/src/testcasesupport/io.c DONE
+[10967][   progress] /home/hopekr/VDCT/quickly/cwe_checker_juliet_suite/src/testcasesupport/std_thread.c starting
+[10967][   progress] /home/hopekr/VDCT/quickly/cwe_checker_juliet_suite/src/testcasesupport/std_thread.c DONE
+[10967][   progress] CWE121_Stack_Based_Buffer_Overflow__char_type_overrun_memcpy_01.c starting
+[10967][   progress] CWE121_Stack_Based_Buffer_Overflow__char_type_overrun_memcpy_01.c DONE
+[10967][   progress] main_linux.cpp starting
+[10967][   progress] main_linux.cpp DONE
+[10967][      debug] Backend stats:
+[10967][      debug]   summary_file_try_load= 351
+[10967][      debug]   summary_read_from_disk= 2
+[10967][      debug]   summary_cache_hits= 1064 (75%)
+[10967][      debug]   summary_cache_misses= 351
+[10967][      debug]   ondemand_procs_analyzed= 60
+[10967][      debug]   ondemand_local_cache_hits= 414 (84%)
+[10967][      debug]   ondemand_local_cache_misses= 78
+[10967][      debug]   proc_locker_lock_time_user= 0.00000000
+[10967][      debug]   proc_locker_lock_time_sys= 0.00000000
+[10967][      debug]   proc_locker_lock_time_wall= 0.00000000
+[10967][      debug]   proc_locker_unlock_time_user= 0.00000000
+[10967][      debug]   proc_locker_unlock_time_sys= 0.00000000
+[10967][      debug]   proc_locker_unlock_time_wall= 0.00000000
+[10967][      debug]   restart_scheduler_useful_time_user= 0.00000000
+[10967][      debug]   restart_scheduler_useful_time_sys= 0.00000000
+[10967][      debug]   restart_scheduler_useful_time_wall= 0.00000000
+[10967][      debug]   restart_scheduler_total_time_user= 0.00000000
+[10967][      debug]   restart_scheduler_total_time_sys= 0.00000000
+[10967][      debug]   restart_scheduler_total_time_wall= 0.00000000
+[10967][      debug]   
+[10967][      debug] GC stats for backend_stats.:
+[10967][      debug]   minor_words: 3.27587e+08
+[10967][      debug]   promoted_words: 1.39375e+06
+[10967][      debug]   major_words: 1.51361e+06
+[10967][      debug]   minor_collections: 316
+[10967][      debug]   major_collections: 7
+[10967][      debug]   compactions: 0
+[10967][      debug]   top_heap_words: 1006592
+[10967][      debug]   
+[10967][      debug] Analysis phase finished in 803ms
+[10967][      debug] backend_stats.scheduler_process_analysis_time_user= 0.64551500
+[10967][      debug] backend_stats.scheduler_process_analysis_time_sys= 0.02020700
+[10967][      debug] backend_stats.scheduler_process_analysis_time_wall= 0.80348740
+[10967][      debug] GC stats for analysis_scheduler:
+[10967][      debug]   minor_words: 3.27595e+08
+[10967][      debug]   promoted_words: 1.39375e+06
+[10967][      debug]   major_words: 1.51412e+06
+[10967][      debug]   minor_collections: 316
+[10967][      debug]   major_collections: 7
+[10967][      debug]   compactions: 0
+[10967][      debug]   top_heap_words: 1006592
+[10967][      debug]   
+[10967][      debug] GC stats for report:
+[10967][      debug]   minor_words: 30980
+[10967][      debug]   promoted_words: 0
+[10967][      debug]   major_words: 802
+[10967][      debug]   minor_collections: 0
+[10967][      debug]   major_collections: 0
+[10967][      debug]   compactions: 0
+[10967][      debug]   top_heap_words: 1006592
+[10967][      debug]   
+[10967][      debug] GC stats for main_process_full:
+[10967][      debug]   minor_words: 3.29281e+08
+[10967][      debug]   promoted_words: 1.56159e+06
+[10967][      debug]   major_words: 2.2088e+06
+[10967][      debug]   minor_collections: 330
+[10967][      debug]   major_collections: 11
+[10967][      debug]   compactions: 1
+[10967][      debug]   top_heap_words: 1006592
+[10967][      debug]   

@@ -1,0 +1,7 @@
+CC=gcc
+CFLAGS=-I.
+TARGET=/build/
+
+all: $(TARGET)
+$(TARGET): main_linux.cpp CWE121_Stack_Based_Buffer_Overflow__char_type_overrun_memcpy_01.c
+	$(CC) -o ./build/hellomake main_linux.cpp CWE121_Stack_Based_Buffer_Overflow__char_type_overrun_memcpy_01.c -I.

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<container>
+  <testcase>
+    <file path="CWE197_Numeric_Truncation_Error__int_connect_socket_to_char_01.c">
+      <flaw line="106" name="CWE-197: Numeric Truncation Error"/>
+    </file>
+  </testcase>
+  <testcase>
+    <file path="CWE197_Numeric_Truncation_Error__int_connect_socket_to_char_02.c">
+      <flaw line="109" name="CWE-197: Numeric Truncation Error"/>
+    </file>
+  </testcase>
+  <testcase>
+    <file path="CWE197_Numeric_Truncation_Error__int_connect_socket_to_char_03.c">
+      <flaw line="109" name="CWE-197: Numeric Truncation Error"/>
+    </file>
+  </testcase>
+</container>

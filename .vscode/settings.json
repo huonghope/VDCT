@@ -1,0 +1,15 @@
+{
+  "files.associations": {
+    "*.ts": "typescriptreact",
+    "*.jsx": "typescriptreact",
+    "stdio.h": "c",
+    "std_testcase.h": "c",
+    "stdint.h": "c",
+    "std_thread.h": "c",
+    "new": "c",
+    "ctype.h": "c",
+    "std_testcase_io.h": "c",
+    "iostream": "cpp",
+    "headerfile.h": "c"
+  }
+}
