@@ -41,7 +41,7 @@ class FlawCollector(object):
 		
 		#defining the bad functions as defined in the docu, slightly adopted
 		primaryBadFunction = "(CWE.*_)?bad\(.*\).*$"
-		badFunctionPattern = "(((CWE.*_)?bad\(\).*)|((bad_.*)\(.*\))|((helper_bad.*)\(.*\))).*$"
+		badFunctionPattern = "(((CWE.*_)?bad\(\).*)|((bad_.*)\(.*\))|((helper_bad.*)\(.*\))).*$" 
 		
 		#inlineBadFunctionPattern = ".*/\*("+badFunctionPattern+")";
 		startLine = -1;
@@ -269,7 +269,7 @@ class FlawCollector(object):
 							writeIssueCnt+=1
 		
 		#write the result as xml
-		with open(outputPath+'existingIssues.xml', 'w') as f:
+		with open(outputPath+'existingIssues2.xml', 'w') as f:
 			f.write(parseString(tostring(root)).toprettyxml())
 		
 		#endTime = time.time()

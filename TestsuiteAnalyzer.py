@@ -81,13 +81,13 @@ class TestsuiteAnalyzer(object):
 				run every tool with scanned files
 			"""
 			for sc in scannerList:
+				path_csv = sc.getOutputFileCsv().replace("#filename", dirName)
+				path_txt = sc.getOutputFileTxt().replace("#filename", dirName)
+				dirutils.file_line_error_header(path_csv)
+    
 				# testcases for infer tools
 				if(sc.getName() == 'infer'):
-						path_csv = sc.getOutputFileCsv().replace("#filename", dirName)
-						path_txt = sc.getOutputFileTxt().replace("#filename", dirName)
 						result_path = sc.getOutputFileCsv().replace("#filename", dirName).replace(".csv", "")
-			
-						dirutils.file_line_error_header(path_csv)
 						py_common.run_commands(["cd " + dir + " && make clean"], True)
 						cmd = sc.getCmdString(dir,dirName)
 						(output, err, exit, time) = dirutils.system_call(cmd, ".") 
@@ -104,19 +104,16 @@ class TestsuiteAnalyzer(object):
 								for d in data:
 										print(d['file'].strip(), ",", str(d['line']), ",", "\"" + d['qualifier'] + "\"")
 						sys.stdout = sys.__stdout__
+      
 				elif(sc.getName() == 'clang'):
-					path_csv = sc.getOutputFileCsv().replace("#filename", dirName)
-					path_txt = sc.getOutputFileTxt().replace("#filename", dirName)
-					
-					dirutils.file_line_error_header(path_csv)
+
 					py_common.run_commands(["cp ./clang.sh " + dir], True)
 					print(os.getcwd())
 					os.chdir('/home/huong/projects/VDCT/' + dir)
 					cmd = "./clang.sh " + dirName
 					(output, err, exit, time) = dirutils.system_call(cmd, ".") 
 					dirutils.tool_exec_log(path_txt, cmd, output, err, exit)
-					print(err)
-					# covert text to csv
+				
 					sys.stdout = open(path_csv, "a")
 					print(err, file=sys.__stdout__)
 					lines = err.splitlines()
@@ -125,20 +122,18 @@ class TestsuiteAnalyzer(object):
 							if (len(parsed) >= 4 and not parsed[3].endswith('note')):
 									print(os.path.basename(parsed[0]), ",", parsed[1], ",", parsed[3] + ":" + parsed[4])
 					sys.stdout = sys.__stdout__
+     
 				elif(sc.getName() == 'cppcheck'):
-						path_csv = sc.getOutputFileCsv().replace("#filename", dirName)
-						path_txt = sc.getOutputFileTxt().replace("#filename", dirName)
+					
 						xml_report_path =  sc.getOutputFileCsv().replace("#filename", dirName).replace("csv", "xml")
-      
-						dirutils.file_line_error_header(path_csv)
 						cmd = sc.getCmdString(dir,dirName)
 						(output, err, exit, time) = dirutils.system_call(cmd, ".")
 						dirutils.tool_exec_log(path_txt, cmd, output, err, exit)
-			
 						tree = ET.parse(xml_report_path)
 						root = tree.getroot()
 						errors = root[1]
 						cppcheck_scanner_result = parentPath + '/tmpData/cppcheck-scanner.csv'
+      
 						with open(cppcheck_scanner_result,"a") as f:
 							f.write(str(dirName) + ',' + str(len(errors)) + "\n")
 						sys.stdout = open(path_csv, "a")
@@ -149,15 +144,11 @@ class TestsuiteAnalyzer(object):
 										if (location.tag == "location"):
 												print(os.path.basename(location.attrib['file']) + ",", location.attrib['line'] + ",", error_id + ",", cwe)
 						sys.stdout = sys.__stdout__
-				elif(sc.getName() == 'flawfinder'):
-						path_csv = sc.getOutputFileCsv().replace("#filename", dirName)
-						path_txt = sc.getOutputFileTxt().replace("#filename", dirName)
-			
-						dirutils.file_line_error_header(path_csv)
+				elif(sc.getName() == 'flawfinder'): #! need to check again
+
 						cmd = sc.getCmdString(dir, '')
 						(output, err, exit, time) = dirutils.system_call(cmd, ".") 
 						dirutils.tool_exec_log(path_txt, cmd, output, err, exit)
-			
 						all_lines = output.splitlines()
 						lines = []
 						line_codes = []
@@ -176,9 +167,9 @@ class TestsuiteAnalyzer(object):
 										break
 
 						sys.stdout = open(path_csv, "a")
-						flawfinder_scanner_result = parentPath + '/tmpData/flawfinder-scanner.csv'
-						with open(flawfinder_scanner_result,"a") as f:
-							f.write(str(dirName) + ',' + str(len(lines)) + "\n")
+						# flawfinder_scanner_result = parentPath + '/tmpData/flawfinder-scanner.csv'
+						# with open(flawfinder_scanner_result,"a") as f:
+						# 	f.write(str(dirName) + ',' + str(len(lines)) + "\n")
 						for i in range(0,len(lines)):
 								if (line_codes[i]):
 										a = lines[i].split(":")
@@ -205,10 +196,9 @@ class TestsuiteAnalyzer(object):
 										print(filename, ",", line_no, ",", error_message , ",", cwe)
 						sys.stdout = sys.__stdout__       
 				elif(sc.getName() == 'framac'):
-						path_csv = sc.getOutputFileCsv().replace("#filename", dirName)
-						path_txt = sc.getOutputFileTxt().replace("#filename", dirName)
+				
+						# only run with *c file
 						source_files = glob.glob(dir + "/*.c")
-						dirutils.file_line_error_header(path_csv)
 						for source in source_files:
 							filename = os.path.basename(source)
 							framac = 'frama-c -quiet -main ' + filename.split(".")[0] + "_bad " + source + " -cpp-extra-args='-I./1v3/juliet_suite-c-cplus/src/testcasesupport  -DINCLUDEMAIN -U__cplusplus'"
