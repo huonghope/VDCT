@@ -23,16 +23,16 @@ if __name__ == '__main__':
     
     flawCollector = FlawCollector(config)
     goodCollector = GoodCollector(config)
-    if(len(config.getCCppScannerList())>0):
-        startFlawCollection=time.time()
-        # flawCollector.collect('ccpp')
-        goodCollector.collect('ccpp')
-        endFlawCollection=time.time()
-        print("collected ccpp flaws in "+str((endFlawCollection-startFlawCollection))+" seconds")
-        for scanner in config.getCCppScannerList():
-            tmpDir = config.tmpCppDataPath+scanner.name
-            if (not os.path.exists(tmpDir)):
-                os.mkdir(tmpDir)
+    # if(len(config.getCCppScannerList())>0):
+    #     startFlawCollection=time.time()
+    #     # flawCollector.collect('ccpp')
+    #     goodCollector.collect('ccpp')
+    #     endFlawCollection=time.time()
+    #     print("collected ccpp flaws in "+str((endFlawCollection-startFlawCollection))+" seconds")
+    #     for scanner in config.getCCppScannerList():
+    #         tmpDir = config.tmpCppDataPath+scanner.name
+    #         if (not os.path.exists(tmpDir)):
+    #             os.mkdir(tmpDir)
     
     # print("start analyzing testsuite");
     # startAnalyzeTime = time.time()
@@ -42,21 +42,10 @@ if __name__ == '__main__':
     # print("run static analyzers in "+str((endAnalyzeTime-startAnalyzeTime))+" seconds")
     
 
-    # print("transforming scanner results");
-    # startTransformTime = time.time();
-    # transformTool = TransformTool(config)
-    # transformTool.transformResults()
+    print("transforming scanner results");
+    startTransformTime = time.time();
+    transformTool = TransformTool(config)
+    transformTool.transformResults()
 
-    # endTransformTime = time.time();
-    # print("transformed scanner results in "+str((endTransformTime-startTransformTime))+" seconds")
-    
-    # compareTool = CompareTool(config)
-    # if(len(config.getCCppScannerList())>0):
-    #     startCompareTime = time.time()
-    #     compareTool.compareResults(config.tmpCppDataPath, config.getCCppScannerList(), "C/C++")
-    #     endCompareTime = time.time()
-    #     print("compared CCPP analyzers in "+str((endCompareTime-startCompareTime))+" seconds")
-    
-    # endTime = time.time()
-    # print("completed full run in "+str((endTime-startTime))+" seconds")
-    
+    endTransformTime = time.time();
+    print("transformed scanner results in "+str((endTransformTime-startTransformTime))+" seconds")

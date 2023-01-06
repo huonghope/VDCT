@@ -18,6 +18,8 @@ import sys
 import random
 import numpy as np
 import re
+import linecache
+from re import search
 
 class Issues(object):
   def __init__(self, code, label, file):
@@ -25,7 +27,7 @@ class Issues(object):
     self.code = code
     self.label = label
     
-def readManifestFile(self,root):
+def readManifestFile(root):
 		flawMap = dict()
 		for testcase in root:
 			issueList = []
@@ -75,30 +77,45 @@ if __name__ == '__main__':
   
   # flawMap = self.readManifestFile(root)
   
-  list_line_issues = []            
+  list_line_issues = []       
+       
   for files in root_isssues:
     for file in files.iter("file"):
       fileName = os.path.basename(file.get("path"))
       if("w32" in fileName or "wchar" in fileName):
         continue
-      # if("CWE758" in fileName):
       if(file.findall("issue")):
         for item in file.findall("issue"):
-          path = file.get("path")
-          with open(path, "r") as code:
-            lines = code.readlines()
-            count = 0
-            list_lines = ""
-            for line in lines:
-              count +=1
-              startLine = int(item.get("startLine")) 
-              endLine = item.get("endLine") 
-              endLine = int(endLine) if endLine else startLine + 20 
-              if count >= startLine + 2 and count <= endLine - 2:
-                list_lines += removeComments(remove_comments(line))
-            issues = Issues(fileName, list_lines, 0)
-            list_line_issues.append(issues)      
-              
+          flaw = flawMap[fileName.lower()]
+          if flaw != None:
+            issue = flaw.existingIssues[0]
+            lineNumber = issue.lineNumber
+            path = file.get("path")
+            error_line = linecache.getline(path, int(lineNumber))
+            issues = Issues(file = fileName, code = error_line, label = 1)
+            remove = ["void" , "#define", "#include", "/*"];
+            code = issues.code;
+            
+            if code.find("void") != -1  or code.find("#define") != -1 or code.find("#include") != -1 or code.find("/*") != -1 or code.find("CWE") != -1 or code.find("#if") != -1:
+              print(code)
+              continue;
+            list_line_issues.append(issues)   
+  # for files in flawMap:
+  #   for file in files.iter("file"):
+  #     fileName = os.path.basename(file.get("path"))
+  #     if("w32" in fileName or "wchar" in fileName):
+  #       continue
+  #     if(file.findall("issue")):
+  #       for item in file.findall("issue"):
+  #         flaw = flawMap[fileName.lower()]
+  #         if flaw != None:
+  #           issue = flaw.existingIssues[0]
+  #           lineNumber = issue.lineNumber
+  #           path = file.get("path")
+  #           error_line = linecache.getline(path, int(lineNumber))
+  #           issues = Issues(file = fileName, code = error_line, label = 1)
+  #           list_line_issues.append(issues)   
+                          
                    
   np.random.shuffle(list_line_issues)
   for item in list_line_issues:

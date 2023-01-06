@@ -62,8 +62,8 @@ class TestsuiteAnalyzer(object):
 				# run the the file
 				# file = os.path.basename(file) #! 추가
 				dirName = os.path.basename(dir)
-				if(dirName != 'CWE476_NULL_Pointer_Dereference'):
-					continue;
+				# if(dirName != 'CWE476_NULL_Pointer_Dereference'):
+				# 	continue;
 				lastFolder = glob.glob(file + "/s0*")
 				if(len(lastFolder) != 0):
 					for subfile in lastFolder:
@@ -124,7 +124,6 @@ class TestsuiteAnalyzer(object):
 					sys.stdout = sys.__stdout__
      
 				elif(sc.getName() == 'cppcheck'):
-					
 						xml_report_path =  sc.getOutputFileCsv().replace("#filename", dirName).replace("csv", "xml")
 						cmd = sc.getCmdString(dir,dirName)
 						(output, err, exit, time) = dirutils.system_call(cmd, ".")
@@ -145,7 +144,6 @@ class TestsuiteAnalyzer(object):
 												print(os.path.basename(location.attrib['file']) + ",", location.attrib['line'] + ",", error_id + ",", cwe)
 						sys.stdout = sys.__stdout__
 				elif(sc.getName() == 'flawfinder'): #! need to check again
-
 						cmd = sc.getCmdString(dir, '')
 						(output, err, exit, time) = dirutils.system_call(cmd, ".") 
 						dirutils.tool_exec_log(path_txt, cmd, output, err, exit)
@@ -167,9 +165,6 @@ class TestsuiteAnalyzer(object):
 										break
 
 						sys.stdout = open(path_csv, "a")
-						# flawfinder_scanner_result = parentPath + '/tmpData/flawfinder-scanner.csv'
-						# with open(flawfinder_scanner_result,"a") as f:
-						# 	f.write(str(dirName) + ',' + str(len(lines)) + "\n")
 						for i in range(0,len(lines)):
 								if (line_codes[i]):
 										a = lines[i].split(":")
